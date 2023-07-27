@@ -1,0 +1,15 @@
+<!-- behavior_app/templates/student_add.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Add Student{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Add Student</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-success" type="submit">Save</button>
+</form>
+<a class="btn btn-secondary mt-2" href="{% url 'student_list' %}">Back to Student List</a>
+{% endblock %}

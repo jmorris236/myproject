@@ -1,0 +1,23 @@
+<!-- behavior_app/templates/student_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}{{ student }} - Notes{% endblock %}
+
+{% block content %}
+<h1>{{ student }}</h1>
+<h2>Notes:</h2>
+<ul>
+    {% for note in notes %}
+    <li>{{ note.behavior }} - {{ note.date }}: {{ note.note }}</li>
+    {% endfor %}
+</ul>
+<h2>Add Note:</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Note</button>
+</form>
+<a href="{% url 'student_list' %}">Back to Student List</a>
+{% endblock %}
+

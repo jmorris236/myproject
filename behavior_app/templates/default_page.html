@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+<html>
+
+<head>
+    <title>Welcome to Student App</title>
+</head>
+{% block content %}
+<body>
+<h1>Welcome to Student App</h1>
+<p>This is the default page of the application.</p>
+<p>You will be redirected to the <a href="{% url 'student_list' %}">Student List</a> page in a moment.</p>
+</body>
+{% endblock %}
+</html>

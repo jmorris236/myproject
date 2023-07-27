@@ -1,0 +1,18 @@
+<!-- behavior_app/templates/student_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Student List{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Student List</h1>
+<a class="btn btn-primary mb-4" href="{% url 'student_add' %}">Add Student</a>
+<ul class="list-group">
+    {% for student in students %}
+    <li class="list-group-item">
+        <a href="{% url 'student_detail' student.pk %}">{{ student }}</a>
+        <a class="btn btn-danger btn-sm ml-2" href="{% url 'student_delete' student.pk %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

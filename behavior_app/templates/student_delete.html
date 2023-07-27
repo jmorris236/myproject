@@ -1,0 +1,15 @@
+<!-- behavior_app/templates/student_delete.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Delete Student{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Delete Student</h1>
+<p>Are you sure you want to delete "{{ student }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Delete</button>
+</form>
+<a class="btn btn-secondary mt-2" href="{% url 'student_list' %}">Cancel</a>
+{% endblock %}
